@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { ArrowUpRightIcon, MapPinIcon, SquaresFourIcon, FilmSlateIcon, PathIcon } from '@phosphor-icons/react/dist/ssr';
+import { ArrowUpRightIcon, UserFocusIcon, SquaresFourIcon, FilmSlateIcon, PathIcon } from '@phosphor-icons/react/dist/ssr';
 import { WhatsAppIcon } from './icons/CustomIcons';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 
@@ -73,7 +73,7 @@ export default function Hero() {
         <div className="hero-centered-content">
           {/* Clean, Unboxed Editorial Eyebrow (No pill badge, no blinking dot) */}
           <span className="hero-eyebrow-clean scroll-reveal-item">
-            DIGITAL MARKETING · PERSONAL BRANDING · CONTENT PRODUCTION
+            CREATIVE AGENCY · CHENNAI
           </span>
 
           {/* Short, Direct, SEO-Friendly Headline */}
@@ -84,9 +84,8 @@ export default function Hero() {
 
           {/* Simple, Direct Subtext */}
           <p className="hero-subtext scroll-reveal-item">
-            MS ELITE is a digital marketing and creative agency helping professionals, coaches,
-            healthcare experts, and business owners build a stronger digital presence through
-            consistent, high-quality content.
+            We help professionals, coaches and business owners build a stronger
+            personal brand with consistent, high-quality content.
           </p>
 
           {/* Action CTAs */}
@@ -99,30 +98,28 @@ export default function Hero() {
             >
               <WhatsAppIcon size={20} />
               <span>Let's Build Your Brand</span>
-              <ArrowUpRightIcon size={16} weight="bold" aria-hidden="true" />
             </a>
 
             <a
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.project)}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary hero-btn-secondary"
+              className="hero-link-secondary"
             >
-              <WhatsAppIcon size={18} />
               <span>Discuss Your Project</span>
               <ArrowUpRightIcon size={14} weight="bold" aria-hidden="true" />
             </a>
           </div>
 
           {/* 4 Proof / Experience Cards (2x2 Grid on Mobile, 4-Col on Desktop) */}
-          <div className="hero-proof-grid scroll-reveal-item" role="region" aria-label="Key Proof & Experience">
+          <div className="hero-proof-grid scroll-reveal-item" role="region" aria-label="What MS ELITE offers">
             <div className="hero-proof-card">
               <div className="hero-proof-icon-wrap" aria-hidden="true">
-                <MapPinIcon size={18} weight="duotone" aria-hidden="true" />
+                <UserFocusIcon size={18} weight="duotone" aria-hidden="true" />
               </div>
               <div className="hero-proof-content">
-                <div className="hero-proof-stat">Chennai</div>
-                <div className="hero-proof-label">Tamil Nadu, India</div>
+                <div className="hero-proof-stat">For Experts</div>
+                <div className="hero-proof-label">Doctors, Coaches, Founders</div>
               </div>
             </div>
 

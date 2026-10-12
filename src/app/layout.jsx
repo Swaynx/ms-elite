@@ -1,5 +1,6 @@
 import { Manrope, Instrument_Serif } from 'next/font/google';
 import './globals.css';
+import { SITE_URL, SITE_NAME, TAGLINE, SEO_TITLE, SEO_DESCRIPTION, SHARE_DESCRIPTION } from '../utils/site';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -15,77 +16,50 @@ const instrumentSerif = Instrument_Serif({
   display: 'swap',
 });
 
-const SITE_URL = 'https://mselite.com'; // TODO: confirm production domain with client
-
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: 'MS ELITE | Digital Marketing & Creative Agency in Chennai',
-  description: 'MS ELITE is a digital marketing and creative agency in Chennai helping professionals, coaches, healthcare experts and business owners build a stronger digital presence through consistent, high-quality content.',
+  title: {
+    default: SEO_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SEO_DESCRIPTION,
+  applicationName: SITE_NAME,
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  category: 'marketing',
   alternates: {
     canonical: '/',
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  // The share image comes from app/opengraph-image.jsx (Next.js adds it automatically).
   openGraph: {
-    title: 'MS ELITE | Digital Marketing & Creative Agency in Chennai',
-    description: 'Creating Lasting Impact Beyond Marketing. Personal branding, content production, video editing and social media marketing.',
+    title: `${SITE_NAME} | ${TAGLINE}`,
+    description: SHARE_DESCRIPTION,
     url: SITE_URL,
-    siteName: 'MS ELITE',
-    images: [
-      {
-        url: '/images/hero-studio-filming.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'MS ELITE — Digital Marketing & Creative Agency',
-      },
-    ],
+    siteName: SITE_NAME,
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MS ELITE | Digital Marketing & Creative Agency in Chennai',
-    description: 'Creating Lasting Impact Beyond Marketing.',
-    images: ['/images/hero-studio-filming.jpg'],
+    title: `${SITE_NAME} | ${TAGLINE}`,
+    description: SHARE_DESCRIPTION,
   },
 };
 
-const faqItems = [
-  ['What does MS ELITE do?', 'MS ELITE is a digital marketing and creative agency focused on personal branding, professional content production, video editing, and social media marketing.'],
-  ['Which services do you offer?', 'Personal branding, short-form video editing and reels production, professional shoots and content production, social media content strategy, static creatives and social media design, Meta Ads management, content planning, and performance review.'],
-  ['Who do you work with?', 'Doctors and healthcare professionals, fitness and business coaches, founders and entrepreneurs, personal brands and influencers, and businesses that want consistent social media content.'],
-  ['How does the process work?', 'We follow five stages: discovery, strategy, production, editing, and delivery.'],
-  ['Where are you based?', 'MS ELITE is based in Chennai, Tamil Nadu, India.'],
-  ['How do I get started?', 'Message us on WhatsApp at +91 80729 66016, email mselitecontact@gmail.com, or reach us on Instagram at @ms_elite_growth.'],
-];
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'ProfessionalService',
-      '@id': `${SITE_URL}/#organization`,
-      name: 'MS ELITE',
-      slogan: 'Creating Lasting Impact Beyond Marketing.',
-      description: 'MS ELITE is a creative agency focused on personal branding, professional content production, video editing, and social media marketing.',
-      url: SITE_URL,
-      email: 'mselitecontact@gmail.com',
-      telephone: '+918072966016',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Chennai',
-        addressRegion: 'Tamil Nadu',
-        addressCountry: 'IN',
-      },
-      sameAs: ['https://www.instagram.com/ms_elite_growth/'],
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: faqItems.map(([name, text]) => ({
-        '@type': 'Question',
-        name,
-        acceptedAnswer: { '@type': 'Answer', text },
-      })),
-    },
-  ],
+export const viewport = {
+  themeColor: '#0E0E10',
+  colorScheme: 'dark',
 };
 
 // Runs before first paint so scroll-reveal items start hidden instead of flashing
@@ -97,13 +71,9 @@ import ScrollObserver from '../components/ScrollObserver';
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
+    <html lang="en-IN" className={`${manrope.variable} ${instrumentSerif.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: revealScript }} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
       </head>
       <body>
         <ScrollObserver />

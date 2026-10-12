@@ -26,7 +26,7 @@ export default function TrustRibbonBanner() {
 
   return (
     <div className="trust-ribbon-wrapper" aria-labelledby="philosophy-ribbon-title">
-      {/* Top Wave Cap: Seamless organic transition rising from Sand (#E8DFD1) into Terracotta (#B54424) */}
+      {/* Top Wave Cap: Seamless organic transition rising from the ivory About section into the charcoal ribbon (#161618) */}
       <div className="trust-wave-cap trust-wave-cap-top" aria-hidden="true">
         <svg
           viewBox="0 0 1440 54"
@@ -37,12 +37,12 @@ export default function TrustRibbonBanner() {
         >
           <path
             d="M0,24 C320,54 680,6 1040,38 C1240,56 1360,18 1440,24 L1440,54 L0,54 Z"
-            fill="#B54424"
+            fill="#161618"
           />
         </svg>
       </div>
 
-      {/* Main Flowing Terracotta Section with Seamless Animated Background Waves */}
+      {/* Main Flowing Charcoal Section with Seamless Animated Background Waves */}
       <section className="trust-ribbon-section">
         <div className="trust-ribbon-bg" aria-hidden="true">
           <svg
@@ -76,21 +76,38 @@ export default function TrustRibbonBanner() {
               opacity="0.95"
             />
 
+            {/* Fine gold line riding the middle wave */}
+            <path
+              className="trust-flow-track track-2"
+              d="M0,220 C320,140 680,300 1040,190 C1220,130 1360,240 1440,220 C1760,140 2120,300 2480,190 C2660,130 2800,240 2880,220"
+              fill="none"
+              stroke="url(#flowGoldLine)"
+              strokeWidth="1.5"
+              vectorEffect="non-scaling-stroke"
+            />
+
             <defs>
+              <linearGradient id="flowGoldLine" x1="0" y1="0" x2="2880" y2="0" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#C9A55C" stopOpacity="0" />
+                <stop offset="25%" stopColor="#C9A55C" stopOpacity="0.55" />
+                <stop offset="50%" stopColor="#E2C98F" stopOpacity="0.2" />
+                <stop offset="75%" stopColor="#C9A55C" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="#C9A55C" stopOpacity="0" />
+              </linearGradient>
               <linearGradient id="flowGrad1" x1="0" y1="0" x2="2880" y2="440" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#C44E2B" />
-                <stop offset="50%" stopColor="#E47752" />
-                <stop offset="100%" stopColor="#A33B1D" />
+                <stop offset="0%" stopColor="#1E1E21" />
+                <stop offset="50%" stopColor="#2A2A2E" />
+                <stop offset="100%" stopColor="#1A1A1D" />
               </linearGradient>
               <linearGradient id="flowGrad2" x1="0" y1="0" x2="2880" y2="440" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#B54424" />
-                <stop offset="50%" stopColor="#D9633D" />
-                <stop offset="100%" stopColor="#8C2F16" />
+                <stop offset="0%" stopColor="#18181B" />
+                <stop offset="50%" stopColor="#232327" />
+                <stop offset="100%" stopColor="#141416" />
               </linearGradient>
               <linearGradient id="flowGrad3" x1="0" y1="0" x2="2880" y2="440" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#8E2C15" />
-                <stop offset="50%" stopColor="#BF4A28" />
-                <stop offset="100%" stopColor="#6E1F0E" />
+                <stop offset="0%" stopColor="#121214" />
+                <stop offset="50%" stopColor="#1C1C1F" />
+                <stop offset="100%" stopColor="#0F0F11" />
               </linearGradient>
             </defs>
           </svg>
@@ -135,7 +152,7 @@ export default function TrustRibbonBanner() {
         </div>
       </section>
 
-      {/* Bottom Wave Cap: Seamless organic transition flowing from Terracotta (#B54424) into Off-White (#F6F5F1) */}
+      {/* Bottom Wave Cap: Seamless organic transition flowing from the charcoal ribbon (#161618) into the ivory FAQ section */}
       <div className="trust-wave-cap trust-wave-cap-bottom" aria-hidden="true">
         <svg
           viewBox="0 0 1440 54"
@@ -146,7 +163,7 @@ export default function TrustRibbonBanner() {
         >
           <path
             d="M0,0 C320,40 680,4 1040,34 C1240,50 1360,14 1440,20 L1440,0 L0,0 Z"
-            fill="#B54424"
+            fill="#161618"
           />
         </svg>
       </div>

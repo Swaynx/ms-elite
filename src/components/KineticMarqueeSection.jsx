@@ -8,6 +8,7 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../utils/whatsapp';
 
 export default function KineticMarqueeSection() {
   const marqueeText = "LET'S BUILD YOUR BRAND · MS ELITE · BEYOND MARKETING · ";
+  const servicesText = "PERSONAL BRANDING · REELS · PROFESSIONAL SHOOTS · CONTENT STRATEGY · META ADS · ";
 
   return (
     <section className="kinetic-marquee-section" aria-label="Let's Talk Statement">
@@ -18,6 +19,14 @@ export default function KineticMarqueeSection() {
           <span className="kinetic-marquee-text">{marqueeText}</span>
           <span className="kinetic-marquee-text">{marqueeText}</span>
           <span className="kinetic-marquee-text">{marqueeText}</span>
+        </div>
+      </div>
+      <div className="kinetic-marquee-track-wrap kinetic-marquee-track-wrap--bottom" aria-hidden="true">
+        <div className="kinetic-marquee-track kinetic-marquee-track--reverse">
+          <span className="kinetic-marquee-text">{servicesText}</span>
+          <span className="kinetic-marquee-text">{servicesText}</span>
+          <span className="kinetic-marquee-text">{servicesText}</span>
+          <span className="kinetic-marquee-text">{servicesText}</span>
         </div>
       </div>
 

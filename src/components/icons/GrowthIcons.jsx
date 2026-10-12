@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Bespoke, multi-layered illustrative icons for The Growth System
  * Designed with dual-tone depth, precision geometry, and the new creative personal branding palette:
- * Creative Coral (#E47752), Forest Green (#293E35), and Natural Sand Ochre (#C88242).
+ * Creative Coral (#C9A55C), Forest Green (#F2EDE4), and Natural Sand Ochre (#A8853F).
  */
 
 // 01. Topic & Positioning Strategy Icon (Reticle, radar, target focal point)
@@ -20,12 +20,12 @@ export function StrategyBlueprintIcon({ size = 46, className = "" }) {
     >
       <defs>
         <radialGradient id="stratGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#E47752" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#E47752" stopOpacity="0" />
+          <stop offset="0%" stopColor="#C9A55C" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#C9A55C" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="stratGrad" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#F5A58A" />
-          <stop offset="100%" stopColor="#E47752" />
+          <stop offset="0%" stopColor="#E2C98F" />
+          <stop offset="100%" stopColor="#C9A55C" />
         </linearGradient>
       </defs>
 
@@ -48,7 +48,7 @@ export function StrategyBlueprintIcon({ size = 46, className = "" }) {
         cx="24"
         cy="24"
         r="11"
-        stroke="#F5A58A"
+        stroke="#E2C98F"
         strokeWidth="1.8"
         strokeOpacity="0.9"
       />
@@ -60,13 +60,13 @@ export function StrategyBlueprintIcon({ size = 46, className = "" }) {
       <line x1="39" y1="24" x2="46" y2="24" stroke="url(#stratGrad)" strokeWidth="2.4" strokeLinecap="round" />
 
       {/* Diagonal Calibration Ticks */}
-      <circle cx="11.2" cy="11.2" r="1.5" fill="#F5A58A" fillOpacity="0.7" />
-      <circle cx="36.8" cy="11.2" r="1.5" fill="#F5A58A" fillOpacity="0.7" />
-      <circle cx="11.2" cy="36.8" r="1.5" fill="#F5A58A" fillOpacity="0.7" />
-      <circle cx="36.8" cy="36.8" r="1.5" fill="#F5A58A" fillOpacity="0.7" />
+      <circle cx="11.2" cy="11.2" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
+      <circle cx="36.8" cy="11.2" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
+      <circle cx="11.2" cy="36.8" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
+      <circle cx="36.8" cy="36.8" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
 
       {/* Center Target Core */}
-      <circle cx="24" cy="24" r="5" fill="#E47752" />
+      <circle cx="24" cy="24" r="5" fill="#C9A55C" />
       <circle cx="24" cy="24" r="2" fill="#FFFFFF" />
     </svg>
   );
@@ -86,12 +86,12 @@ export function StudioCameraIcon({ size = 46, className = "" }) {
     >
       <defs>
         <radialGradient id="camGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#293E35" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#293E35" stopOpacity="0" />
+          <stop offset="0%" stopColor="#F2EDE4" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#F2EDE4" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="camGrad" x1="4" y1="10" x2="44" y2="38" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#4F7363" />
-          <stop offset="100%" stopColor="#293E35" />
+          <stop offset="0%" stopColor="#B9B3A8" />
+          <stop offset="100%" stopColor="#F2EDE4" />
         </linearGradient>
       </defs>
 
@@ -116,21 +116,21 @@ export function StudioCameraIcon({ size = 46, className = "" }) {
         rx="5"
         stroke="url(#camGrad)"
         strokeWidth="2.4"
-        fill="rgba(41, 62, 53, 0.1)"
+        fill="rgba(242, 237, 228, 0.1)"
       />
 
       {/* Creative Coral Tally Recording Dot */}
-      <circle cx="11" cy="19" r="2" fill="#E47752" />
+      <circle cx="11" cy="19" r="2" fill="#C9A55C" />
 
       {/* Center Optical Glass Circle */}
       <circle
         cx="17.5"
         cy="25"
         r="5"
-        stroke="#4F7363"
+        stroke="#B9B3A8"
         strokeWidth="2"
       />
-      <circle cx="17.5" cy="25" r="2" fill="#293E35" />
+      <circle cx="17.5" cy="25" r="2" fill="#F2EDE4" />
 
       {/* Anamorphic Lens / Conical Projector */}
       <path
@@ -139,13 +139,13 @@ export function StudioCameraIcon({ size = 46, className = "" }) {
         strokeWidth="2.4"
         strokeLinecap="round"
         strokeLinejoin="round"
-        fill="rgba(41, 62, 53, 0.14)"
+        fill="rgba(242, 237, 228, 0.14)"
       />
 
       {/* Soundwave indicators */}
       <path
         d="M44 21C45.2 22.8 45.2 25.2 44 27"
-        stroke="#4F7363"
+        stroke="#B9B3A8"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -167,12 +167,12 @@ export function TimelineEditingIcon({ size = 46, className = "" }) {
     >
       <defs>
         <radialGradient id="editGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#C88242" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#C88242" stopOpacity="0" />
+          <stop offset="0%" stopColor="#A8853F" stopOpacity="0.3" />
+          <stop offset="100%" stopColor="#A8853F" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="editGrad" x1="6" y1="8" x2="42" y2="40" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#E5A86F" />
-          <stop offset="100%" stopColor="#C88242" />
+          <stop offset="0%" stopColor="#D9BE84" />
+          <stop offset="100%" stopColor="#A8853F" />
         </linearGradient>
       </defs>
 
@@ -188,7 +188,7 @@ export function TimelineEditingIcon({ size = 46, className = "" }) {
         rx="4"
         stroke="url(#editGrad)"
         strokeWidth="2.2"
-        fill="rgba(200, 130, 66, 0.08)"
+        fill="rgba(201, 165, 92, 0.1)"
       />
 
       {/* Video Track Splices */}
@@ -196,17 +196,17 @@ export function TimelineEditingIcon({ size = 46, className = "" }) {
       <rect x="23" y="12" width="15" height="6" rx="2" fill="url(#editGrad)" fillOpacity="0.5" />
 
       {/* Audio Waveform Bars */}
-      <rect x="10" y="21" width="2" height="5" rx="1" fill="#C88242" />
-      <rect x="14" y="20" width="2" height="7" rx="1" fill="#E5A86F" />
-      <rect x="18" y="22" width="2" height="4" rx="1" fill="#C88242" />
-      <rect x="23" y="19" width="2" height="9" rx="1" fill="#E5A86F" />
-      <rect x="27" y="21" width="2" height="6" rx="1" fill="#C88242" />
-      <rect x="31" y="20" width="2" height="8" rx="1" fill="#E5A86F" />
-      <rect x="35" y="22" width="2" height="4" rx="1" fill="#C88242" />
+      <rect x="10" y="21" width="2" height="5" rx="1" fill="#A8853F" />
+      <rect x="14" y="20" width="2" height="7" rx="1" fill="#D9BE84" />
+      <rect x="18" y="22" width="2" height="4" rx="1" fill="#A8853F" />
+      <rect x="23" y="19" width="2" height="9" rx="1" fill="#D9BE84" />
+      <rect x="27" y="21" width="2" height="6" rx="1" fill="#A8853F" />
+      <rect x="31" y="20" width="2" height="8" rx="1" fill="#D9BE84" />
+      <rect x="35" y="22" width="2" height="4" rx="1" fill="#A8853F" />
 
       {/* Precision Playhead Needle */}
-      <line x1="22" y1="6" x2="22" y2="33" stroke="#293E35" strokeWidth="2" strokeLinecap="round" />
-      <polygon points="19,6 25,6 22,9.5" fill="#293E35" />
+      <line x1="22" y1="6" x2="22" y2="33" stroke="#F2EDE4" strokeWidth="2" strokeLinecap="round" />
+      <polygon points="19,6 25,6 22,9.5" fill="#F2EDE4" />
 
       {/* Precision Scissors / Cut Blades below */}
       <g transform="translate(10, 31)">
@@ -214,13 +214,13 @@ export function TimelineEditingIcon({ size = 46, className = "" }) {
         <circle cx="23" cy="10" r="3.2" stroke="url(#editGrad)" strokeWidth="1.8" />
         <path d="M7.5 8L20.5 2" stroke="url(#editGrad)" strokeWidth="2.2" strokeLinecap="round" />
         <path d="M20.5 8L7.5 2" stroke="url(#editGrad)" strokeWidth="2.2" strokeLinecap="round" />
-        <circle cx="14" cy="5" r="1.5" fill="#293E35" />
+        <circle cx="14" cy="5" r="1.5" fill="#F2EDE4" />
       </g>
 
       {/* Sparkle Flares */}
       <path
         d="M39 4L40 7L43 8L40 9L39 12L38 9L35 8L38 7L39 4Z"
-        fill="#E5A86F"
+        fill="#D9BE84"
       />
     </svg>
   );
@@ -240,12 +240,12 @@ export function ConversionGrowthIcon({ size = 46, className = "" }) {
     >
       <defs>
         <radialGradient id="growGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#E47752" stopOpacity="0.35" />
-          <stop offset="100%" stopColor="#E47752" stopOpacity="0" />
+          <stop offset="0%" stopColor="#C9A55C" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#C9A55C" stopOpacity="0" />
         </radialGradient>
         <linearGradient id="growGrad" x1="6" y1="42" x2="42" y2="6" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#293E35" />
-          <stop offset="100%" stopColor="#E47752" />
+          <stop offset="0%" stopColor="#F2EDE4" />
+          <stop offset="100%" stopColor="#C9A55C" />
         </linearGradient>
       </defs>
 
@@ -261,7 +261,7 @@ export function ConversionGrowthIcon({ size = 46, className = "" }) {
       {/* Exponential Growth Curve Line */}
       <path
         d="M6 35C14 34 20 28 36 11"
-        stroke="#E47752"
+        stroke="#C9A55C"
         strokeWidth="2.8"
         strokeLinecap="round"
       />
@@ -269,20 +269,20 @@ export function ConversionGrowthIcon({ size = 46, className = "" }) {
       {/* Dynamic Arrowhead */}
       <path
         d="M26 10H38V22"
-        stroke="#E47752"
+        stroke="#C9A55C"
         strokeWidth="2.8"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
 
       {/* Radiating Success / Inbound Signal Rings */}
-      <circle cx="38" cy="10" r="4" stroke="#F5A58A" strokeWidth="1.6" strokeDasharray="2 2" />
-      <circle cx="38" cy="10" r="7.5" stroke="#E47752" strokeWidth="1.4" strokeOpacity="0.6" strokeDasharray="3 3" />
+      <circle cx="38" cy="10" r="4" stroke="#E2C98F" strokeWidth="1.6" strokeDasharray="2 2" />
+      <circle cx="38" cy="10" r="7.5" stroke="#C9A55C" strokeWidth="1.4" strokeOpacity="0.6" strokeDasharray="3 3" />
 
       {/* Diamond Stars */}
       <path
         d="M12 12L13.5 15.5L17 17L13.5 18.5L12 22L10.5 18.5L7 17L10.5 15.5L12 12Z"
-        fill="#E47752"
+        fill="#C9A55C"
       />
     </svg>
   );

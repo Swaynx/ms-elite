@@ -23,11 +23,12 @@ export default function Footer() {
           <div>
             <div className="footer-col-head">Navigation</div>
             <ul className="footer-list">
-              <li><a href="#what-we-do" className="footer-link-item">What We Do</a></li>
-              <li><a href="#work" className="footer-link-item">Selected Work</a></li>
-              <li><a href="#system" className="footer-link-item">Process</a></li>
-              <li><a href="#about" className="footer-link-item">About Us</a></li>
-              <li><a href="#faq" className="footer-link-item">FAQ</a></li>
+              <li><a href="/#what-we-do" className="footer-link-item">What We Do</a></li>
+              <li><a href="/#work" className="footer-link-item">Selected Work</a></li>
+              <li><a href="/#results" className="footer-link-item">Client Results</a></li>
+              <li><a href="/#system" className="footer-link-item">Process</a></li>
+              <li><a href="/#about" className="footer-link-item">About Us</a></li>
+              <li><a href="/#faq" className="footer-link-item">FAQ</a></li>
             </ul>
           </div>
 
@@ -75,6 +76,11 @@ export default function Footer() {
 
         <div className="footer-bottom">
           <span>© {currentYear} MS ELITE. All rights reserved.</span>
+          <nav className="footer-legal" aria-label="Legal">
+            <a href="/privacy-policy" className="footer-legal-link">Privacy Policy</a>
+            <a href="/terms" className="footer-legal-link">Terms of Service</a>
+            <a href="/disclaimer" className="footer-legal-link">Disclaimer</a>
+          </nav>
           <span>Digital Marketing & Creative Agency · Chennai, Tamil Nadu, India</span>
         </div>
       </div>
