@@ -20,7 +20,7 @@ npm run start    # serve the production build
 src/
   app/
     layout.jsx        Metadata, structured data (JSON-LD), fonts
-    opengraph-image.jsx  Link-preview image (WhatsApp, Instagram, LinkedIn…)
+    opengraph-image.jsx  Link-preview image (WhatsApp, Instagram, LinkedIn…); add public/images/og-bg.jpg for a photo background
     icon.svg, apple-icon.jsx, manifest.js  Favicon, iPhone icon, web app manifest
     robots.js, sitemap.js  Generated robots.txt and sitemap.xml
     privacy-policy/, terms/, disclaimer/  Legal pages
@@ -58,6 +58,6 @@ The site only uses content the client has confirmed. These are still to come:
 - Genuine client testimonials (a testimonials section will be added in `page.jsx` once real ones exist)
 - LinkedIn and YouTube URLs
 - Final confirmation of services and packages
-- Production domain (currently `https://mselite.com` in `src/utils/site.js`)
+- Production domain: the site uses Vercel's production URL automatically (`src/utils/site.js`); connect the custom domain in Vercel when it's ready
 - A logo file (the favicon is a placeholder gold "M" monogram)
 - Legal review of the Privacy Policy, Terms and Disclaimer

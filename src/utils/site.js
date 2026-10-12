@@ -1,5 +1,12 @@
-// Site-wide SEO details. SITE_URL is used by metadata, JSON-LD, robots.txt and sitemap.xml.
-export const SITE_URL = 'https://mselite.com'; // TODO: confirm production domain with client
+// Site-wide SEO details. SITE_URL is used by metadata, JSON-LD, robots.txt, sitemap.xml
+// and the share image URL, so it must be the address the site is really served from.
+// On Vercel it follows the project's production domain automatically (the custom domain once
+// one is connected). Set NEXT_PUBLIC_SITE_URL in Vercel to override it.
+const vercelProductionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (vercelProductionHost ? `https://${vercelProductionHost}` : 'https://ms-elite-omega.vercel.app')
+).replace(/\/$/, '');
 export const SITE_NAME = 'MS ELITE';
 export const TAGLINE = 'Creating Lasting Impact Beyond Marketing.';
 
