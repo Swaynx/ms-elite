@@ -2,9 +2,12 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-// Link-preview image for WhatsApp, Instagram, LinkedIn, X, etc. Generated at build time.
-// If public/images/og-bg.jpg exists (1200x630 photo, no text), it is used as the background;
-// otherwise the card falls back to a plain black-and-gold background.
+// Source for src/app/opengraph-image.jpg (the link preview for WhatsApp, Instagram, LinkedIn, X).
+// The live site uses the static JPG because a PNG with a photo is too heavy for WhatsApp (~300 KB limit).
+// To change the text or background: copy this file into src/app/ (and remove the .jpg there), run
+// `npm run build`, convert .next/server/app/opengraph-image.body to JPG (~85% quality), save it back
+// as src/app/opengraph-image.jpg, and move this file back here.
+// Background photo: public/images/og-bg.jpg (1200x630, no text).
 export const alt = 'MS ELITE: Creating Lasting Impact Beyond Marketing. Personal branding and content agency in Chennai.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
@@ -24,8 +27,8 @@ async function loadBackground() {
 
 export default async function OpengraphImage() {
   const [extraBold, semiBold, background] = await Promise.all([
-    readFile(join(process.cwd(), 'src/app/_og/manrope-800.woff')),
-    readFile(join(process.cwd(), 'src/app/_og/manrope-600.woff')),
+    readFile(join(process.cwd(), 'scripts/_og/manrope-800.woff')),
+    readFile(join(process.cwd(), 'scripts/_og/manrope-600.woff')),
     loadBackground(),
   ]);
 

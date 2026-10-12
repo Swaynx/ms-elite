@@ -20,7 +20,7 @@ npm run start    # serve the production build
 src/
   app/
     layout.jsx        Metadata, structured data (JSON-LD), fonts
-    opengraph-image.jsx  Link-preview image (WhatsApp, Instagram, LinkedIn…); add public/images/og-bg.jpg for a photo background
+    opengraph-image.jpg  Link-preview image (WhatsApp, Instagram, LinkedIn…); source in scripts/opengraph-image.jsx
     icon.svg, apple-icon.jsx, manifest.js  Favicon, iPhone icon, web app manifest
     robots.js, sitemap.js  Generated robots.txt and sitemap.xml
     privacy-policy/, terms/, disclaimer/  Legal pages
