@@ -44,7 +44,7 @@ The site only uses content the client has confirmed. These are still to come:
 
 - Founder name, biography and photos
 - Approved work samples / portfolio links (the reel cards in `CaseStudy.jsx` are hidden behind `SHOW_REEL_SAMPLES`)
-- Genuine client testimonials (`GoogleReviews` and `VideoTestimonials` are hidden in `page.jsx` until real ones exist)
+- Genuine client testimonials (a testimonials section will be added in `page.jsx` once real ones exist)
 - LinkedIn and YouTube URLs
 - Final confirmation of services and packages
 - Production domain (currently `https://mselite.com` in `layout.jsx`, `robots.txt` and `sitemap.xml`)

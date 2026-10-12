@@ -201,7 +201,7 @@ export default function PalettePreviewPage() {
                   </h3>
 
                   <p style={{ fontSize: '0.875rem', color: theme.textSecondary, lineHeight: 1.6, marginBottom: '20px' }}>
-                    Vijay helps coaches, doctors, founders, and business owners turn what they know into clear, high-retention video content that builds authority.
+                    MS ELITE helps coaches, doctors, founders, and business owners turn what they know into clear, high-retention video content that builds authority.
                   </p>
 
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>

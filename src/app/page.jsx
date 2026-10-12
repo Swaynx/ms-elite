@@ -5,9 +5,6 @@ import ServiceList from '../components/ServiceList';
 import GrowthSystem from '../components/GrowthSystem';
 import KineticMarqueeSection from '../components/KineticMarqueeSection';
 import CaseStudy from '../components/CaseStudy';
-// GoogleReviews and VideoTestimonials are hidden until genuine client reviews are provided.
-// import GoogleReviews from '../components/GoogleReviews';
-// import VideoTestimonials from '../components/VideoTestimonials';
 import AboutSection from '../components/AboutSection';
 import TrustRibbonBanner from '../components/TrustRibbonBanner';
 import FAQ from '../components/FAQ';
@@ -25,8 +22,7 @@ export default function HomePage() {
         <GrowthSystem />
         <KineticMarqueeSection />
         <CaseStudy />
-        {/* <GoogleReviews /> — hidden until genuine reviews are provided */}
-        {/* <VideoTestimonials /> — hidden until genuine video testimonials are provided */}
+        {/* Testimonials: add a section here once genuine client reviews are provided */}
         <AboutSection />
         <TrustRibbonBanner />
         <FAQ />
