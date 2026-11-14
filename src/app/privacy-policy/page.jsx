@@ -24,12 +24,17 @@ export default function PrivacyPolicyPage() {
       </p>
 
       <h2>2. Information we collect</h2>
-      <p><strong>Information you give us.</strong> When you message us on WhatsApp, email us or contact us on Instagram, we receive what you choose to share, such as:</p>
+      <p><strong>Information you give us.</strong> When you message us on WhatsApp, email us, contact us on Instagram or use the enquiry form on our Contact page, we receive what you choose to share, such as:</p>
       <ul>
         <li>your name, phone number, email address and social media handle;</li>
         <li>your business or practice name and details about your project;</li>
         <li>photos, videos, logos, documents and other material you send for a project.</li>
       </ul>
+      <p>
+        <strong>Our enquiry form.</strong> The form on our Contact page does not store your details on our website. When
+        you submit it, it opens WhatsApp with your answers written out as a message, and nothing is sent until you press
+        send in WhatsApp.
+      </p>
       <p>
         <strong>Information collected automatically.</strong> Our website does not use advertising or analytics cookies and does
         not ask you to create an account. Like most websites, our hosting provider may automatically record basic technical

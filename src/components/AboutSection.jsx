@@ -57,7 +57,7 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div style={{ marginTop: '8px' }}>
+            <div className="about-actions">
               <a
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.project)}
                 target="_blank"
@@ -67,6 +67,10 @@ export default function AboutSection() {
               >
                 <WhatsAppIcon size={16} />
                 <span>Discuss Your Project</span>
+                <ArrowUpRightIcon size={14} weight="bold" aria-hidden="true" />
+              </a>
+              <a href="/about" className="hero-link-secondary">
+                <span>Read Our Story</span>
                 <ArrowUpRightIcon size={14} weight="bold" aria-hidden="true" />
               </a>
             </div>

@@ -12,13 +12,27 @@ import { PlayIcon } from '@phosphor-icons/react/dist/ssr';
 //   src: '/videos/physiora.mp4',
 //   poster: '/images/physiora-poster.jpg',
 // },
-const RESULT_VIDEOS = [];
+const RESULT_VIDEOS = [
+  {
+    client: 'Physiora',
+    category: 'Healthcare',
+    title: 'Physiotherapy correction reel',
+    src: '/videos/physiora-correction.mp4',
+  },
+];
 
 // Shown in place of videos until the client sends approved ones.
 const PLACEHOLDERS = ['Healthcare', 'Coaching', 'Founder Brand'];
 
+// The row always shows three cards: real videos first, then placeholders for the rest
+// (skipping categories a real video already covers).
+const SLOTS = 3;
+
 export default function VideoResults() {
   const hasVideos = RESULT_VIDEOS.length > 0;
+  const coveredCategories = new Set(RESULT_VIDEOS.map((video) => video.category));
+  const placeholders = PLACEHOLDERS.filter((category) => !coveredCategories.has(category))
+    .slice(0, Math.max(0, SLOTS - RESULT_VIDEOS.length));
 
   return (
     <section id="results" className="section-padding results-section" aria-labelledby="results-title">
@@ -37,17 +51,17 @@ export default function VideoResults() {
         </div>
 
         <div className="results-grid">
-          {hasVideos
-            ? RESULT_VIDEOS.map((video) => (
+          {RESULT_VIDEOS.map((video) => (
                 <article key={video.src} className="work-card-vertical results-card">
                   <div className="work-reel-thumb-wrap">
                     <video
                       className="work-reel-thumb"
-                      src={video.src}
+                      // "#t=0.1" makes browsers show the first frame when there is no poster image
+                      src={video.poster ? video.src : `${video.src}#t=0.1`}
                       poster={video.poster}
                       controls
                       playsInline
-                      preload="none"
+                      preload="metadata"
                       aria-label={`${video.client}: ${video.title}`}
                     />
                   </div>
@@ -58,8 +72,8 @@ export default function VideoResults() {
                     <p className="results-client">{video.client}</p>
                   </div>
                 </article>
-              ))
-            : PLACEHOLDERS.map((category) => (
+              ))}
+          {placeholders.map((category) => (
                 <div key={category} className="work-card-vertical results-card results-card-placeholder">
                   <div className="work-reel-thumb-wrap results-placeholder-frame" aria-hidden="true">
                     <span className="results-play">

@@ -27,3 +27,6 @@ Thumbs.db
 # Local AI design-skill tooling (not part of the website)
 .agents/
 skills-lock.json
+
+# Uncompressed source media (kept locally, too large for GitHub)
+media-originals/

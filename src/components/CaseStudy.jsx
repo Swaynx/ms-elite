@@ -3,9 +3,7 @@ import Image from 'next/image';
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { getWhatsAppUrl } from '../utils/whatsapp';
 import { WhatsAppIcon } from './icons/CustomIcons';
-
-// Client names supplied in the MS ELITE brief. Logos, screenshots and results need client permission first.
-const CLIENTS = ['Santhosh Prem', 'Finance with Harish', 'Physiora', 'Kavya Suha', 'Fit.edu'];
+import { CLIENTS, ClientAvatar, ClientCard } from './Clients';
 
 // The reel cards below are layout placeholders, not real client work.
 // Replace their images and text with approved client samples before setting this to true.
@@ -42,29 +40,42 @@ export default function CaseStudy() {
           <div className="work-featured-info">
             <span className="work-meta-tag">OUR CLIENTS</span>
             <h3 className="work-title">
-              Brands We've Worked With.
+              Creators &amp; Brands We've Worked With.
             </h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.9375rem', lineHeight: '1.6' }}>
-              Personal branding, video editing and content for creators, professionals and growing businesses.
+              Personal branding, video editing and content for Instagram creators, professionals and growing businesses.
             </p>
-            <div style={{ borderTop: '1px solid var(--border-medium)', paddingTop: '12px' }}>
-              <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'var(--text-primary)', display: 'block', marginBottom: '10px' }}>
-                CLIENTS
-              </span>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {CLIENTS.map((name) => (
-                  <li
-                    key={name}
-                    style={{ fontSize: '0.875rem', fontWeight: 600, color: 'var(--text-primary)', background: 'var(--bg-surface)', border: '1px solid var(--border-medium)', borderRadius: '999px', padding: '6px 14px' }}
-                  >
-                    {name}
-                  </li>
+            <div className="client-stack-row">
+              <div className="client-stack" aria-hidden="true">
+                {CLIENTS.map((client) => (
+                  <ClientAvatar key={client.name} client={client} size={40} />
                 ))}
-              </ul>
-              <p style={{ fontSize: '0.8125rem', color: 'var(--text-muted)', marginTop: '12px' }}>
-                Work samples and case studies coming soon.
+              </div>
+              <p className="client-stack-label">
+                <strong>{CLIENTS.length} creators &amp; brands</strong>
+                <span>on Instagram</span>
               </p>
             </div>
+            <p className="client-note">
+              Work samples and case studies coming soon.
+            </p>
+          </div>
+        </div>
+
+        {/* Creator wall: a grid on desktop, a continuous one-line carousel on phones.
+            The second copy only exists to make the phone loop seamless. */}
+        <div className="client-marquee">
+          <div className="client-track">
+            <ul className="client-wall" aria-label="Creators and brands we've worked with">
+              {CLIENTS.map((client) => (
+                <ClientCard key={client.name} client={client} />
+              ))}
+            </ul>
+            <ul className="client-wall client-wall-clone" aria-hidden="true">
+              {CLIENTS.map((client) => (
+                <ClientCard key={client.name} client={client} clone />
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -142,7 +153,8 @@ export default function CaseStudy() {
             className="btn-secondary"
           >
             <WhatsAppIcon size={17} />
-            <span>Ask to See Our Recent Work on WhatsApp</span>
+            <span className="btn-label-long">Ask to See Our Recent Work on WhatsApp</span>
+            <span className="btn-label-short">See Our Recent Work</span>
             <ArrowUpRightIcon size={14} weight="bold" aria-hidden="true" />
           </a>
         </div>

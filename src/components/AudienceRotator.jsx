@@ -44,9 +44,11 @@ export default function AudienceRotator({ items }) {
     <div
       ref={stageRef}
       className="proof-strip-header audience-stage"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onFocus={() => setPaused(true)}
+      // Pause for a real mouse or keyboard focus only: phones fake a mouseenter on
+      // tap with no mouseleave, which would freeze the rotator after one tap.
+      onPointerEnter={(e) => { if (e.pointerType === 'mouse') setPaused(true); }}
+      onPointerLeave={(e) => { if (e.pointerType === 'mouse') setPaused(false); }}
+      onFocus={(e) => { if (e.target.matches(':focus-visible')) setPaused(true); }}
       onBlur={() => setPaused(false)}
     >
       <h2 id="audience-title" className="audience-title">

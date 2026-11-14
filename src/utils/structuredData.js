@@ -3,7 +3,7 @@ import { FAQS } from './faqs';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES, CONTACT_EMAIL, INSTAGRAM_URL } from './whatsapp';
 
 // JSON-LD for the home page: website, business details, services and the visible FAQ.
-const ORG_ID = `${SITE_URL}/#organization`;
+export const ORG_ID = `${SITE_URL}/#organization`;
 
 export const homeJsonLd = {
   '@context': 'https://schema.org',

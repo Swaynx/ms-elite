@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { usePathname } from 'next/navigation';
 import { ArrowUpRightIcon, EnvelopeSimpleIcon } from '@phosphor-icons/react/dist/ssr';
 import { WhatsAppIcon, InstagramIcon } from './icons/CustomIcons';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES, CONTACT_EMAIL, INSTAGRAM_URL } from '../utils/whatsapp';
@@ -9,16 +10,19 @@ const NAV_LINKS = [
   { href: '/#what-we-do', label: 'What We Do' },
   { href: '/#system', label: 'Process' },
   { href: '/#work', label: 'Work' },
-  { href: '/#about', label: 'About' },
+  { href: '/about', label: 'About' },
   { href: '/#faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 // Fuller labels for the roomier mobile menu
-const MOBILE_LABELS = { '/#work': 'Selected Work', '/#about': 'About Us' };
+const MOBILE_LABELS = { '/#work': 'Selected Work', '/about': 'About Us', '/contact': 'Contact Us' };
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isCurrent = (href) => !href.includes('#') && pathname === href;
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
 
@@ -96,7 +100,15 @@ export default function Navbar() {
           <nav aria-label="Primary Navigation">
             <ul className="nav-links">
               {NAV_LINKS.map(({ href, label }) => (
-                <li key={href}><a href={href} className="nav-link">{label}</a></li>
+                <li key={href}>
+                  <a
+                    href={href}
+                    className={`nav-link${isCurrent(href) ? ' is-current' : ''}`}
+                    aria-current={isCurrent(href) ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
               ))}
             </ul>
           </nav>

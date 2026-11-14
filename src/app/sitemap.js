@@ -8,6 +8,12 @@ export default function sitemap() {
       changeFrequency: 'monthly',
       priority: 1,
     },
+    ...['/about', '/contact'].map((path) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    })),
     ...LEGAL_PAGES.map(({ path }) => ({
       url: `${SITE_URL}${path}`,
       lastModified: new Date('2026-10-12'),

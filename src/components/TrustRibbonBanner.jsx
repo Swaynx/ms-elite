@@ -4,25 +4,10 @@ import React from 'react';
 import { ArrowUpRightIcon } from '@phosphor-icons/react/dist/ssr';
 import { WhatsAppIcon } from './icons/CustomIcons';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../utils/whatsapp';
+import { PRINCIPLES } from '../utils/content';
 
 export default function TrustRibbonBanner() {
-  const principles = [
-    {
-      num: "01",
-      title: "Clarity",
-      desc: "People should understand who you help and why your approach works in under 60 seconds."
-    },
-    {
-      num: "02",
-      title: "Consistency",
-      desc: "A recognizable visual rhythm, clean audio, and steady weekly publishing cadence."
-    },
-    {
-      num: "03",
-      title: "Credibility",
-      desc: "Demonstrate real clinical or business depth instead of chasing hollow viral trends."
-    }
-  ];
+  const principles = PRINCIPLES;
 
   return (
     <div className="trust-ribbon-wrapper" aria-labelledby="philosophy-ribbon-title">

@@ -27,8 +27,9 @@ export default function Footer() {
               <li><a href="/#work" className="footer-link-item">Selected Work</a></li>
               <li><a href="/#results" className="footer-link-item">Client Results</a></li>
               <li><a href="/#system" className="footer-link-item">Process</a></li>
-              <li><a href="/#about" className="footer-link-item">About Us</a></li>
+              <li><a href="/about" className="footer-link-item">About Us</a></li>
               <li><a href="/#faq" className="footer-link-item">FAQ</a></li>
+              <li><a href="/contact" className="footer-link-item">Contact</a></li>
             </ul>
           </div>
 

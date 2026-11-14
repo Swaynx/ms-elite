@@ -45,8 +45,9 @@ export default function Hero() {
       id="hero"
       className="hero-section"
       aria-labelledby="hero-title"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      // Mouse only: a tap on a phone would otherwise stop the slideshow for good
+      onPointerEnter={(e) => { if (e.pointerType === 'mouse') setIsPaused(true); }}
+      onPointerLeave={(e) => { if (e.pointerType === 'mouse') setIsPaused(false); }}
     >
       {/* 2-3 Image Background Slider */}
       <div className="hero-slider-bg-wrap" aria-hidden="true">

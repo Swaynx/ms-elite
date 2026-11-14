@@ -1,7 +1,8 @@
 import React from 'react';
 
 /**
- * Bespoke, multi-layered illustrative icons for The Growth System
+ * Bespoke, multi-layered illustrative icons for The Growth System.
+ * Parts with gi-* classes loop small micro-animations (see "PROCESS ICON MICRO-ANIMATIONS" in globals.css).
  * Designed with dual-tone depth, precision geometry, and the new creative personal branding palette:
  * Creative Coral (#C9A55C), Forest Green (#F2EDE4), and Natural Sand Ochre (#A8853F).
  */
@@ -41,6 +42,7 @@ export function StrategyBlueprintIcon({ size = 46, className = "" }) {
         strokeWidth="2.2"
         strokeDasharray="4 3"
         strokeOpacity="0.85"
+        className="gi-spin"
       />
 
       {/* Inner Precision Ring */}
@@ -60,14 +62,16 @@ export function StrategyBlueprintIcon({ size = 46, className = "" }) {
       <line x1="39" y1="24" x2="46" y2="24" stroke="url(#stratGrad)" strokeWidth="2.4" strokeLinecap="round" />
 
       {/* Diagonal Calibration Ticks */}
-      <circle cx="11.2" cy="11.2" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
-      <circle cx="36.8" cy="11.2" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
-      <circle cx="11.2" cy="36.8" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
-      <circle cx="36.8" cy="36.8" r="1.5" fill="#E2C98F" fillOpacity="0.7" />
+      <circle cx="11.2" cy="11.2" r="1.5" fill="#E2C98F" fillOpacity="0.7" className="gi-twinkle" style={{ animationDelay: '0.0s' }} />
+      <circle cx="36.8" cy="11.2" r="1.5" fill="#E2C98F" fillOpacity="0.7" className="gi-twinkle" style={{ animationDelay: '0.7s' }} />
+      <circle cx="11.2" cy="36.8" r="1.5" fill="#E2C98F" fillOpacity="0.7" className="gi-twinkle" style={{ animationDelay: '1.4s' }} />
+      <circle cx="36.8" cy="36.8" r="1.5" fill="#E2C98F" fillOpacity="0.7" className="gi-twinkle" style={{ animationDelay: '2.1s' }} />
 
       {/* Center Target Core */}
-      <circle cx="24" cy="24" r="5" fill="#C9A55C" />
-      <circle cx="24" cy="24" r="2" fill="#FFFFFF" />
+      <g className="gi-pulse">
+        <circle cx="24" cy="24" r="5" fill="#C9A55C" />
+        <circle cx="24" cy="24" r="2" fill="#FFFFFF" />
+      </g>
     </svg>
   );
 }
@@ -120,7 +124,7 @@ export function StudioCameraIcon({ size = 46, className = "" }) {
       />
 
       {/* Creative Coral Tally Recording Dot */}
-      <circle cx="11" cy="19" r="2" fill="#C9A55C" />
+      <circle cx="11" cy="19" r="2" fill="#C9A55C" className="gi-blink" />
 
       {/* Center Optical Glass Circle */}
       <circle
@@ -130,7 +134,7 @@ export function StudioCameraIcon({ size = 46, className = "" }) {
         stroke="#B9B3A8"
         strokeWidth="2"
       />
-      <circle cx="17.5" cy="25" r="2" fill="#F2EDE4" />
+      <circle cx="17.5" cy="25" r="2" fill="#F2EDE4" className="gi-glint" />
 
       {/* Anamorphic Lens / Conical Projector */}
       <path
@@ -148,6 +152,7 @@ export function StudioCameraIcon({ size = 46, className = "" }) {
         stroke="#B9B3A8"
         strokeWidth="2"
         strokeLinecap="round"
+        className="gi-wave"
       />
     </svg>
   );
@@ -196,24 +201,26 @@ export function TimelineEditingIcon({ size = 46, className = "" }) {
       <rect x="23" y="12" width="15" height="6" rx="2" fill="url(#editGrad)" fillOpacity="0.5" />
 
       {/* Audio Waveform Bars */}
-      <rect x="10" y="21" width="2" height="5" rx="1" fill="#A8853F" />
-      <rect x="14" y="20" width="2" height="7" rx="1" fill="#D9BE84" />
-      <rect x="18" y="22" width="2" height="4" rx="1" fill="#A8853F" />
-      <rect x="23" y="19" width="2" height="9" rx="1" fill="#D9BE84" />
-      <rect x="27" y="21" width="2" height="6" rx="1" fill="#A8853F" />
-      <rect x="31" y="20" width="2" height="8" rx="1" fill="#D9BE84" />
-      <rect x="35" y="22" width="2" height="4" rx="1" fill="#A8853F" />
+      <rect x="10" y="21" width="2" height="5" rx="1" fill="#A8853F" className="gi-bar" style={{ animationDelay: '0.00s' }} />
+      <rect x="14" y="20" width="2" height="7" rx="1" fill="#D9BE84" className="gi-bar" style={{ animationDelay: '-0.17s' }} />
+      <rect x="18" y="22" width="2" height="4" rx="1" fill="#A8853F" className="gi-bar" style={{ animationDelay: '-0.34s' }} />
+      <rect x="23" y="19" width="2" height="9" rx="1" fill="#D9BE84" className="gi-bar" style={{ animationDelay: '-0.51s' }} />
+      <rect x="27" y="21" width="2" height="6" rx="1" fill="#A8853F" className="gi-bar" style={{ animationDelay: '-0.68s' }} />
+      <rect x="31" y="20" width="2" height="8" rx="1" fill="#D9BE84" className="gi-bar" style={{ animationDelay: '-0.85s' }} />
+      <rect x="35" y="22" width="2" height="4" rx="1" fill="#A8853F" className="gi-bar" style={{ animationDelay: '-1.02s' }} />
 
       {/* Precision Playhead Needle */}
-      <line x1="22" y1="6" x2="22" y2="33" stroke="#F2EDE4" strokeWidth="2" strokeLinecap="round" />
-      <polygon points="19,6 25,6 22,9.5" fill="#F2EDE4" />
+      <g className="gi-playhead">
+        <line x1="22" y1="6" x2="22" y2="33" stroke="#F2EDE4" strokeWidth="2" strokeLinecap="round" />
+        <polygon points="19,6 25,6 22,9.5" fill="#F2EDE4" />
+      </g>
 
       {/* Precision Scissors / Cut Blades below */}
       <g transform="translate(10, 31)">
         <circle cx="5" cy="10" r="3.2" stroke="url(#editGrad)" strokeWidth="1.8" />
         <circle cx="23" cy="10" r="3.2" stroke="url(#editGrad)" strokeWidth="1.8" />
-        <path d="M7.5 8L20.5 2" stroke="url(#editGrad)" strokeWidth="2.2" strokeLinecap="round" />
-        <path d="M20.5 8L7.5 2" stroke="url(#editGrad)" strokeWidth="2.2" strokeLinecap="round" />
+        <path d="M7.5 8L20.5 2" stroke="url(#editGrad)" strokeWidth="2.2" strokeLinecap="round" className="gi-blade-a" />
+        <path d="M20.5 8L7.5 2" stroke="url(#editGrad)" strokeWidth="2.2" strokeLinecap="round" className="gi-blade-b" />
         <circle cx="14" cy="5" r="1.5" fill="#F2EDE4" />
       </g>
 
@@ -221,6 +228,7 @@ export function TimelineEditingIcon({ size = 46, className = "" }) {
       <path
         d="M39 4L40 7L43 8L40 9L39 12L38 9L35 8L38 7L39 4Z"
         fill="#D9BE84"
+        className="gi-twinkle"
       />
     </svg>
   );
@@ -253,10 +261,10 @@ export function ConversionGrowthIcon({ size = 46, className = "" }) {
       <circle cx="24" cy="24" r="22" fill="url(#growGlow)" />
 
       {/* Upward Growth Grid Bars */}
-      <rect x="8" y="30" width="5" height="10" rx="2" fill="url(#growGrad)" fillOpacity="0.35" />
-      <rect x="16" y="24" width="5" height="16" rx="2" fill="url(#growGrad)" fillOpacity="0.5" />
-      <rect x="24" y="17" width="5" height="23" rx="2" fill="url(#growGrad)" fillOpacity="0.7" />
-      <rect x="32" y="10" width="5" height="30" rx="2" fill="url(#growGrad)" fillOpacity="0.9" />
+      <rect x="8" y="30" width="5" height="10" rx="2" fill="url(#growGrad)" fillOpacity="0.35" className="gi-grow" style={{ animationDelay: '0.00s' }} />
+      <rect x="16" y="24" width="5" height="16" rx="2" fill="url(#growGrad)" fillOpacity="0.5" className="gi-grow" style={{ animationDelay: '0.12s' }} />
+      <rect x="24" y="17" width="5" height="23" rx="2" fill="url(#growGrad)" fillOpacity="0.7" className="gi-grow" style={{ animationDelay: '0.24s' }} />
+      <rect x="32" y="10" width="5" height="30" rx="2" fill="url(#growGrad)" fillOpacity="0.9" className="gi-grow" style={{ animationDelay: '0.36s' }} />
 
       {/* Exponential Growth Curve Line */}
       <path
@@ -264,6 +272,8 @@ export function ConversionGrowthIcon({ size = 46, className = "" }) {
         stroke="#C9A55C"
         strokeWidth="2.8"
         strokeLinecap="round"
+        pathLength="1"
+        className="gi-draw"
       />
 
       {/* Dynamic Arrowhead */}
@@ -273,16 +283,19 @@ export function ConversionGrowthIcon({ size = 46, className = "" }) {
         strokeWidth="2.8"
         strokeLinecap="round"
         strokeLinejoin="round"
+        className="gi-nudge"
       />
 
       {/* Radiating Success / Inbound Signal Rings */}
-      <circle cx="38" cy="10" r="4" stroke="#E2C98F" strokeWidth="1.6" strokeDasharray="2 2" />
-      <circle cx="38" cy="10" r="7.5" stroke="#C9A55C" strokeWidth="1.4" strokeOpacity="0.6" strokeDasharray="3 3" />
+      <circle cx="38" cy="10" r="4" stroke="#E2C98F" strokeWidth="1.6" strokeDasharray="2 2" className="gi-ripple" />
+      <circle cx="38" cy="10" r="7.5" stroke="#C9A55C" strokeWidth="1.4" strokeOpacity="0.6" strokeDasharray="3 3" className="gi-spin gi-spin-rev" />
 
       {/* Diamond Stars */}
       <path
         d="M12 12L13.5 15.5L17 17L13.5 18.5L12 22L10.5 18.5L7 17L10.5 15.5L12 12Z"
         fill="#C9A55C"
+        className="gi-twinkle"
+        style={{ animationDelay: '-1.2s' }}
       />
     </svg>
   );

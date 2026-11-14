@@ -23,6 +23,7 @@ src/
     opengraph-image.jpg  Link-preview image (WhatsApp, Instagram, LinkedIn…); source in scripts/opengraph-image.jsx
     icon.svg, apple-icon.jsx, manifest.js  Favicon, iPhone icon, web app manifest
     robots.js, sitemap.js  Generated robots.txt and sitemap.xml
+    about/, contact/, thank-you/  About page, contact page with enquiry form, post-enquiry page
     privacy-policy/, terms/, disclaimer/  Legal pages
     page.jsx          Section order for the home page
     globals.css       All styles
@@ -32,8 +33,11 @@ src/
   utils/site.js       Domain, SEO title/description, service list
   utils/faqs.js       FAQ content (used by the FAQ section and its structured data)
   utils/structuredData.js  Home page JSON-LD (business, services, FAQ)
+  utils/content.js    Audiences, principles and founder story shared by the home and About pages
 public/
-  images/             Section imagery
+  images/             Section imagery (images/clients/ = creator profile pictures)
+  videos/             Client result videos (keep each file well under 100 MB for GitHub)
+media-originals/      Uncompressed source media, git-ignored
 ```
 
 Icons: [Phosphor](https://phosphoricons.com) for UI icons, [Simple Icons](https://simpleicons.org) for brand logos.
@@ -44,6 +48,8 @@ Icons: [Phosphor](https://phosphoricons.com) for UI icons, [Simple Icons](https:
 - **Domain, page title, description**: `src/utils/site.js`
 - **Structured data (JSON-LD)**: `src/utils/structuredData.js`
 - **Client result videos**: `RESULT_VIDEOS` in `src/components/VideoResults.jsx` (placeholders show until it has entries)
+- **Creators shown on the site**: `CLIENTS` in `src/components/Clients.jsx` (name, photo, Instagram link)
+- **Enquiry form**: `src/components/ContactForm.jsx` (opens WhatsApp with the answers, then `/thank-you`)
 - **Legal pages**: `src/app/privacy-policy`, `src/app/terms`, `src/app/disclaimer` (date in `LEGAL_UPDATED`, `src/utils/site.js`)
 - **FAQ questions and answers**: `src/utils/faqs.js`
 - **Section copy**: the matching component in `src/components/`
