@@ -139,14 +139,24 @@ export default function ContactForm() {
       </div>
 
       <fieldset className="cf-field cf-services">
-        <legend>What can we help with? <span className="cf-optional">(choose any)</span></legend>
+        <legend>
+          What can we help with?{' '}
+          <span className="cf-optional" aria-live="polite">
+            {values.services.length ? `(${values.services.length} selected)` : '(choose any)'}
+          </span>
+        </legend>
         <div className="cf-chips">
           {SERVICES.map((service) => {
             const checked = values.services.includes(service);
             return (
               <label key={service} className={`cf-chip${checked ? ' is-checked' : ''}`}>
                 <input type="checkbox" checked={checked} onChange={() => toggleService(service)} />
-                <span>{service}</span>
+                <span className="cf-chip-check" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="12" height="12">
+                    <path d="M3.5 8.5l3 3 6-7" />
+                  </svg>
+                </span>
+                <span className="cf-chip-text">{service}</span>
               </label>
             );
           })}

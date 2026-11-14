@@ -73,24 +73,29 @@ export default function Hero() {
       <div className="container hero-container-relative">
         <div className="hero-centered-content">
           {/* Clean, Unboxed Editorial Eyebrow (No pill badge, no blinking dot) */}
-          <span className="hero-eyebrow-clean scroll-reveal-item">
+          <span className="hero-eyebrow-clean hero-intro" style={{ '--d': '0.15s' }}>
             CREATIVE AGENCY · CHENNAI
           </span>
 
           {/* Short, Direct, SEO-Friendly Headline */}
-          <h1 id="hero-title" className="hero-headline scroll-reveal-item">
-            Creating Lasting Impact <br />
-            <span className="hero-pop-highlight">Beyond Marketing.</span>
+          {/* Each line rises out of its own mask on load (pure CSS, no waiting for JS) */}
+          <h1 id="hero-title" className="hero-headline">
+            <span className="hl-line">
+              <span className="hl-inner" style={{ '--d': '0.3s' }}>Creating Lasting Impact</span>
+            </span>
+            <span className="hl-line">
+              <span className="hl-inner hero-pop-highlight" style={{ '--d': '0.45s' }}>Beyond Marketing.</span>
+            </span>
           </h1>
 
           {/* Simple, Direct Subtext */}
-          <p className="hero-subtext scroll-reveal-item">
+          <p className="hero-subtext hero-intro" style={{ '--d': '0.75s' }}>
             We help professionals, coaches and business owners build a stronger
             personal brand with consistent, high-quality content.
           </p>
 
           {/* Action CTAs */}
-          <div className="hero-actions scroll-reveal-item">
+          <div className="hero-actions hero-intro hero-intro-pop" style={{ '--d': '0.9s' }}>
             <a
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.hero)}
               target="_blank"
@@ -113,7 +118,7 @@ export default function Hero() {
           </div>
 
           {/* 4 Proof / Experience Cards (2x2 Grid on Mobile, 4-Col on Desktop) */}
-          <div className="hero-proof-grid scroll-reveal-item" role="region" aria-label="What MS ELITE offers">
+          <div className="hero-proof-grid" role="region" aria-label="What MS ELITE offers">
             <div className="hero-proof-card">
               <div className="hero-proof-icon-wrap" aria-hidden="true">
                 <UserFocusIcon size={18} weight="duotone" aria-hidden="true" />

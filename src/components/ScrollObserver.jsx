@@ -2,8 +2,9 @@
 
 import { useEffect } from 'react';
 
-// Longest reveal transition in globals.css is 1.2s; cleanup waits a little longer.
-const REVEAL_DURATION_MS = 1300;
+// Safety net only: entrances are cleaned up when their animation ends. If that event
+// never arrives (e.g. the element is hidden mid-way), clean up after this long anyway.
+const REVEAL_FALLBACK_MS = 2400;
 
 export default function ScrollObserver() {
   useEffect(() => {
@@ -18,17 +19,16 @@ export default function ScrollObserver() {
     }
 
     // The pre-paint script in layout.jsx turns reveals on and gives up after 4s if this
-    // component hasn't loaded (slow phone or network). If it already gave up, the page
-    // is fully visible; don't hide it again just to replay the entrances.
-    if (!document.documentElement.classList.contains('js-reveal-active')) return;
+    // component hasn't loaded yet (slow phone, slow network, dev server compiling). In that
+    // case everything is already visible: whatever is on screen or above it stays as it is,
+    // and only content further down (not seen yet) gets its entrance animation.
+    const root = document.documentElement;
+    const fallbackFired = !root.classList.contains('js-reveal-active');
 
     // Element -> entrance style. Styles live in globals.css under "ENTRANCE VARIANTS":
     // up (rise), blur (rise + unblur, for headings), left / right (slide in),
     // pop (scale up with a soft overshoot), zoom (image settles from a slight zoom).
     const revealMap = [
-      ['.hero-centered-content > *', 'up'],
-      ['.hero-headline', 'blur'],
-      ['.hero-proof-card', 'pop'],
       ['.proof-strip-header', 'up'],
       ['.section-title', 'blur'],
       ['.section-subtext', 'up'],
@@ -80,6 +80,10 @@ export default function ScrollObserver() {
     revealMap.forEach(([selector, variant]) => {
       document.querySelectorAll(selector).forEach((el) => {
         if (el.dataset.revealDone !== undefined) return; // already played (dev re-runs)
+        if (fallbackFired && el.getBoundingClientRect().top < window.innerHeight) {
+          el.dataset.revealDone = ''; // already visible to the visitor: leave it alone
+          return;
+        }
         el.dataset.reveal = variant;
         elementSet.add(el);
       });
@@ -91,6 +95,7 @@ export default function ScrollObserver() {
         el.classList.add('scroll-reveal-item');
       }
     });
+    root.classList.add('js-reveal-active');
 
     // Elements that come into view together enter one after another (top to bottom,
     // then left to right); an element scrolling in on its own enters straight away.
@@ -112,10 +117,22 @@ export default function ScrollObserver() {
     };
     const finishReveal = (el) => {
       const stagger = parseFloat(el.style.getPropertyValue('--reveal-stagger')) || 0;
-      const timer = setTimeout(() => {
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        el.removeEventListener('animationend', onEnd);
+        clearTimeout(timer);
         timers.delete(timer);
         settle(el);
-      }, REVEAL_DURATION_MS + stagger * 1000);
+      };
+      // Entrances are keyframe animations (globals.css "REVEAL ANIMATIONS"); they always
+      // play to the end, and the element is handed back to its own styles right after.
+      function onEnd(e) {
+        if (e.target === el && e.animationName.startsWith('reveal')) finish();
+      }
+      el.addEventListener('animationend', onEnd);
+      const timer = setTimeout(finish, REVEAL_FALLBACK_MS + stagger * 1000);
       timers.add(timer);
     };
 
