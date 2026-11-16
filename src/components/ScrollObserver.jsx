@@ -43,7 +43,6 @@ export default function ScrollObserver() {
       ['.work-featured-img-wrap', 'zoom'],
       ['.work-featured-info', 'right'],
       ['.work-card-vertical', 'pop'],
-      ['.client-wall:not(.client-wall-clone) .client-card', 'pop'],
       ['.client-marquee', 'up'],
       ['.about-grid > :first-child', 'zoom'],
       ['.about-grid > :not(:first-child)', 'right'],

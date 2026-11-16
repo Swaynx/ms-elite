@@ -30,7 +30,42 @@ export const CLIENTS = [
     photo: '/images/clients/kavya-suha.jpg',
     instagram: 'https://www.instagram.com/_kavyasuha_/',
   },
-  { name: 'Fit.edu', initials: 'F' },
+  {
+    name: 'Fit.edu',
+    initials: 'F',
+    photo: '/images/clients/fit-edu.jpg',
+    instagram: 'https://www.instagram.com/fit.edu_fitness_academy/',
+  },
+  {
+    name: 'Dr. Surakshith Battina',
+    initials: 'SB',
+    photo: '/images/clients/dr-surakshith.jpg',
+    instagram: 'https://www.instagram.com/dr_baby_maker/',
+  },
+  {
+    name: 'Fit Nanba',
+    initials: 'FN',
+    photo: '/images/clients/fit-nanba.jpg',
+    instagram: 'https://www.instagram.com/fitnanba_/',
+  },
+  {
+    name: 'Dr. Kaveri Subbiah',
+    initials: 'KS',
+    photo: '/images/clients/dr-kaveri.jpg',
+    instagram: 'https://www.instagram.com/dr.kaveri_paeds/',
+  },
+  {
+    name: 'Rahul Kumar',
+    initials: 'RK',
+    photo: '/images/clients/rahul-kumar.jpg',
+    instagram: 'https://www.instagram.com/alpharahul7/',
+  },
+  {
+    name: 'Sivaguru Kanthasamy',
+    initials: 'SK',
+    photo: '/images/clients/sivaguru.jpg',
+    instagram: 'https://www.instagram.com/cdt_siva/',
+  },
 ];
 
 // Profile picture in a gold "story ring"; initials until a real photo is added

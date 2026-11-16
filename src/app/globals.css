@@ -6916,3 +6916,99 @@ html.menu-open .mobile-sticky-bar {
     padding: 14px 20px;
   }
 }
+
+/* ==========================================================================
+   CREATOR CAROUSEL (all screen sizes): one smooth, continuous line
+   Replaces the desktop grid; the cards are listed twice so the loop is seamless.
+   ========================================================================== */
+.client-marquee {
+  position: relative;
+  overflow: hidden;
+  margin: 0 calc(50% - 50vw) 8px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+
+.client-track {
+  display: flex;
+  width: max-content;
+  padding: 10px 0 18px;
+  animation: clientMarquee 55s linear infinite;
+}
+
+/* Hover (desktop) or a held finger (phones) pauses it, so a card can be read or tapped */
+.client-marquee:hover .client-track,
+.client-marquee:active .client-track,
+.client-marquee:focus-within .client-track {
+  animation-play-state: paused;
+}
+
+.client-wall,
+.client-wall-clone {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 16px;
+  margin: 0;
+  padding-right: 16px; /* equals the gap, so both copies are the same width */
+}
+
+.client-card {
+  width: 200px;
+  flex: 0 0 200px;
+}
+
+/* "+N" bubble at the end of the overlapping avatars on the featured card */
+.client-stack-more {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  margin-left: -10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--gold-300);
+  background: var(--ink-900);
+  border: 3px solid var(--surface-card);
+}
+
+@media (max-width: 768px) {
+  .client-marquee {
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 28px, #000 calc(100% - 28px), transparent 100%);
+  }
+
+  .client-track {
+    animation-duration: 42s;
+  }
+
+  .client-wall,
+  .client-wall-clone {
+    gap: 12px;
+    padding-right: 12px;
+  }
+
+  .client-card {
+    width: 150px;
+    flex: 0 0 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .client-track {
+    animation: none;
+  }
+
+  .client-marquee {
+    overflow-x: auto;
+  }
+
+  .client-wall-clone {
+    display: none;
+  }
+}

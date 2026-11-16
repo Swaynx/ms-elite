@@ -9,6 +9,9 @@ import { CLIENTS, ClientAvatar, ClientCard } from './Clients';
 // Replace their images and text with approved client samples before setting this to true.
 const SHOW_REEL_SAMPLES = false;
 
+// How many overlapping avatars the featured card shows before a "+N" bubble
+const STACK_SIZE = 5;
+
 export default function CaseStudy() {
   return (
     <section id="work" className="section-padding" aria-labelledby="work-title">
@@ -47,9 +50,12 @@ export default function CaseStudy() {
             </p>
             <div className="client-stack-row">
               <div className="client-stack" aria-hidden="true">
-                {CLIENTS.map((client) => (
+                {CLIENTS.slice(0, STACK_SIZE).map((client) => (
                   <ClientAvatar key={client.name} client={client} size={40} />
                 ))}
+                {CLIENTS.length > STACK_SIZE && (
+                  <span className="client-stack-more">+{CLIENTS.length - STACK_SIZE}</span>
+                )}
               </div>
               <p className="client-stack-label">
                 <strong>{CLIENTS.length} creators &amp; brands</strong>
