@@ -19,6 +19,18 @@ const RESULT_VIDEOS = [
     title: 'Physiotherapy correction reel',
     src: '/videos/physiora-correction.mp4',
   },
+  {
+    client: 'Fit Nanba',
+    category: 'Fitness Coaching',
+    title: 'Coach introduction reel',
+    src: '/videos/fitnanba-coach-intro.mp4',
+  },
+  {
+    client: 'Fit Nanba',
+    category: 'Fitness',
+    title: 'Client transformation reel',
+    src: '/videos/fitnanba-alex-transformation.mp4',
+  },
 ];
 
 // Shown in place of videos until the client sends approved ones.
